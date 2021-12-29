@@ -4,7 +4,8 @@ cd $1
 
 for file in *;
 do
-	newname=`echo $file | sed 's/[0-9]*\([_a-zA-Z0-9]*\)\.\([a-z]*\)/17\1.\2/'`
+	newname=`echo $file | sed 's/[0-9]*\([_a-zA-Z0-9]*\)\.\([a-z]*\)/'$1'\1.\2/'`
+	echo $newname
 	mv $file $newname
 done
 
